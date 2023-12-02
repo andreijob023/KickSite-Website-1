@@ -1,0 +1,617 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family : 'Spartan', sans-serif;
+}
+
+h1 {
+    font-size: 40px;
+    line-height: 56px;
+    color:#222;
+}
+
+h4 {
+    font-size: 20px;
+    line-height: 11px;
+    color: #222;
+    padding-top: 25%;
+}
+
+p {
+    font-size: 16px;
+    color: #465b52;
+    margin: 15px 0 20px 0;
+}
+
+.categorary-age {
+    padding: 40px 80px;
+}
+
+.border{
+  border-bottom: #1e1e20 solid;
+  border-left: #1e1e20 10px solid;
+  border-right: #1e1e20 10px solid;
+  background-color: #3a3b3a;
+}
+
+button.normal {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 15px 30px;
+  color: #fff;
+  background-color: #a32633;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: 0.2s;
+}
+
+button.white {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 11px 18px;
+  color: #fff;
+  background-color:transparent;
+  cursor: pointer;
+  border: 1px solid #fff;
+  outline: none;
+  transition: 0.2s;
+}
+
+
+body {
+    width: 100%;
+}
+
+/* Header Start */
+
+#header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding : 20px 80px;
+    background:#1e1e20 ;
+    box-shadow: 0 5px 15px  rgba(0, 0, 0, 0.959);
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+
+
+#header a img{
+    height:50px; 
+    width: auto;
+}
+
+
+#navbar{
+    display : flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar li{
+    list-style: none;
+    padding : 0 20px;
+    position : relative;
+    /*list-style: none;*/
+}
+
+#navbar li a{
+    font-family: "Open Sans",sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: auto;
+    color: #ffffff;
+    transition: 0.3s ease;
+}
+
+#navbar li a:hover,
+#navbar li a.active{
+    color:  #db0b0b;
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after{
+    content: "";
+    width: 60%;
+    height: 2px;
+    background: #db0b0b;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #FF0000;
+  border: none;
+  border-radius: 15px;
+}
+button:hover {background-color: #FF0000}
+
+button:active {
+  background-color: #FF0000;
+  transform: translateY(4px);
+}
+
+#mobile {
+    display: none;
+    align-items: center;
+}
+
+#close {
+    display: none;
+}
+
+/* Home Page */
+
+#banner {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: url("../img/backgr4.jpg");
+  width: 100%;
+  height: 40vh;
+  background-size: cover;
+  background-position:25% 50%;
+}
+
+#banner h4 {
+  text-align: center;
+  color:#ffffff;
+  font-size:30px;
+  height:0vh;
+  padding-top: 2%;
+}
+
+#banner p {
+  color: #f50a0a;;
+  font-size: 50px;
+  padding: 10px 0;
+}
+
+
+
+#Info{
+    background-image: url("../img/backgr.png");
+    height: 100vh;
+    width: 100%;
+    padding: 0px 80px;
+    display: flex;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    background-size: 100% 95%;
+}
+
+
+#categories { /*yung header sa different categ ogf ages */
+    text-align: center;
+}
+
+#categories .categ-container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    flex-wrap: wrap;
+}
+
+#categories .age {/*yung labas ng container*/
+    width: 25%;
+    min-width: 250px;
+    padding: 10px 12px;
+    border: 1px solid #3a3b3a;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 20px 20px 30px rgba(36, 32, 32, 0.26);/*doon sa shadow ng each container*/
+
+    transition : 0.5s ease;
+    position: relative;
+    text-align: center;
+    background-color: #1e1e20;
+   
+}
+
+#categories .age:hover { /*doon sa shadow ng each container (by hover)*/
+    box-shadow: 20px 20px 30px rgba(110, 109, 109, 0.904)
+}
+
+#categories .age img {
+    width: 100%;
+    border-radius: 20px;
+    border: #f8f3f3 solid;
+}
+
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+ 
+}
+
+.flip-card-front span, .flip-card-back span{
+  font-size:40px;
+  font-weight: 700;
+  background-color: #1e1e20;
+  border: #fff solid;
+  padding:8px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  
+
+}
+
+.flip-card-front {
+  color: rgb(167, 8, 8);
+  bottom:63px;
+ 
+}
+
+.flip-card-back {
+  color: rgb(255, 255, 255);
+  transform: rotateY(180deg);
+  bottom: 63px;
+ 
+}
+
+
+
+ 
+
+
+
+/* Start Media Qeury */
+
+@media (max-width:799px) {
+    h4 {
+      padding-top: 40% ;
+
+    }
+    #banner h4{
+      font-size: 15px;
+    }
+
+    #banner p{
+      font-size: 15px;
+    }
+
+    .categorary-age {
+        padding: 40px 40px;
+    }
+    #navbar { /*navigation in mobile view*/
+        display : flex;
+        flex-direction : column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        right: -300px;
+        height: 100vh;
+        width: 300px;
+        background-color: #1e1e20;
+        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+        padding : 80px 0 0 10px;
+        transition: 0.3s;
+    }
+
+    #navbar.active{
+        right: 0px;
+        
+    }
+    #navbar li {
+        margin-bottom: 25px;
+    }
+
+    #navbar li a{
+        color: #fff;
+    }
+
+    #mobile {
+        display: flex;
+        align-items: center;
+        color: #fff;
+    }
+
+    #mobile i {
+        color: #f8f3f3;
+        font-size: 24px;
+        padding-right: 20px;
+    }
+
+    #close {
+        display: initial;
+        position : absolute;
+        top: 30px;
+        left: 30px;
+        color: rgb(247, 247, 247);
+        font-size: 20px;
+    }
+
+    #Info {
+        height: 70vh;
+        padding: 0 80px;
+        background-position: top 30% right 30%;
+    }
+
+
+   
+    #categories .categ-container {
+        justify-content: center;
+    }
+    #categories .age {
+        margin: 15px;
+    }
+
+    
+  .flip-card-front span, .flip-card-back span{
+  font-size:20px;
+  font-weight: 600;
+
+  }
+
+  .flip-card-front {
+  bottom:38px;
+ 
+  }
+
+  .flip-card-back {
+ 
+  bottom: 38px;
+ 
+  }
+  
+    #banner {
+      height: 20vh;
+  }
+}
+
+
+  
+
+
+@media (max-width: 477px) {
+    .categorary-age {
+        padding: 20px;
+    }
+    #header {
+        padding: 10px 30px;
+    }
+    h1 {
+        font-size: 25px;
+        line-height: 1.6;
+    
+    }
+    h4 {
+        font-size: 20px;
+        padding-top: 70%;
+    }
+    #Info {
+        padding: 0 20px;
+        background-position: 55%;
+    }
+    #categories .age{
+        width: 100%;
+    }
+
+    #banner {
+      height: 40vh;
+  }
+
+}
+
+
+  /*footer*/
+  
+  /* The KickSite logo */
+  
+  .footerkoto img{
+    height: 50px;
+    width:auto;
+  
+  }
+  
+  /*footer-body*/
+  .footerkoto{
+    background: #1e1e20;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font: bold 16px sans-serif;
+    padding: 40px 35px;
+  }
+  
+  .footerkoto .left-foot,
+  .footerkoto .mid-footer,
+  .footerkoto .right-footer{
+    display: inline-block;
+    vertical-align: top;
+  }
+  
+  /* Footer left */
+  
+  .footerkoto .left-foot{
+    width: 40%;
+  }
+  
+  
+  /* Footer links */
+  
+  .footerkoto .footlinks{
+    color:  #ffffff;
+    margin: 20px 0 12px;
+    padding: 0;
+  }
+  
+  .footerkoto .footlinks a{
+    display:inline-block;
+    line-height: 1.8;
+    font-weight:400;
+    text-decoration: none;
+    color:  inherit;
+  }
+  
+  .footerkoto .sub-text{
+    color:  #ffff;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+  }
+  
+  /* Footer Center */
+  
+  .footerkoto .mid-footer{
+    width: 35%;
+  }
+  
+  .footerkoto .mid-footer i{
+    background-color:  #33383b;
+    color: #ffffff;
+    font-size: 25px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    margin: 10px 15px;
+    vertical-align: middle;
+  }
+  
+  .footerkoto .mid-footer i.fa-envelope{
+    font-size: 17px;
+    line-height: 38px;
+  }
+  
+  .footerkoto .mid-footer p{
+    display: inline-block;
+    color: #ffffff;
+    font-weight:400;
+    vertical-align: middle;
+    margin:0;
+  }
+  
+  .footerkoto .mid-footer p span{
+    display:block;
+    font-weight: normal;
+    font-size:14px;
+    line-height:2;
+  }
+  
+  .footerkoto .mid-footer p a{
+    color:  rgb(178, 32, 32);
+    text-decoration: underline;
+  }
+  
+  .footerkoto .footlinks a:before {
+    content: "|";
+    font-weight:300;
+    font-size: 20px;
+    left: 0;
+    color: #fff;
+    display: inline-block;
+    padding-right: 5px;
+  }
+  
+  .footerkoto .footlinks .link-1:before {
+    content: none;
+  }
+  
+  /* Footer Right */
+  
+  
+  .footerkoto .footer-company-about{
+  line-height: 20px;
+    color:  #92999f;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 0;
+  }
+  .footerkoto .right-footer{
+    width: 20%;
+  }
+  
+  .footerkoto .footer-company-about span{
+    display: block;
+    color:  #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /****footer-icons*/
+  
+  .footerkoto .footer-icons{
+    margin-top: 20px;
+  }
+  
+  .footerkoto .footer-icons a{
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    background-color:  #33383b;
+    border-radius: 2px;
+  
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 35px;
+  
+    margin-right: 3px;
+    margin-bottom: 5px;
+  }
+  /* rESponsive column for the footer*/
+  
+  
+  @media (max-width: 880px) {
+  
+    .footerkoto{
+      font: bold 14px sans-serif;
+    }
+  
+    .footerkoto .left-foot,
+    .footerkoto .mid-footer,
+    .footerkoto .right-footer{
+      display: block;
+      width: 100%;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+  
+    .footerkoto .mid-footer i{
+      margin-left: 0;
+    }
+  
+  }
